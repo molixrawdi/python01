@@ -1,0 +1,22 @@
+import os, sys
+#workpath = "C:\Users\mo.rawi\Dcuments\Python\Code\gitmigrate"
+#huge_list = []
+os.chdir(r"C:/\\Users/\\mo.rawi/\Documents/\\Python/\\Code/\\gitmigrate")
+huge_file_path = "C:\\Users\\mo.rawi\\Documents\\Python\\Code\\gitmigrate\\huge_file"
+repo_target_path = "C:\\Users\\mo.rawi\\Documents\\Python\\Code\\gitmigrate\\repotarget"
+with open(huge_file_path, "r") as readfile:
+    huge_list = readfile.read().split(",")
+    targetfile = (repo_target_path,"w+")
+    repo_counter = 1
+    daily_share = 3
+    daily_share_divider = "Daily_share_ends_here"
+    repo = huge_list[repo_counter]
+    writefile = open("repotarget","w+")
+    writefile.writelines(repo)
+    #print(repo)
+    if repo_counter == daily_share:
+        writefile.writelines(repo+daily_share_divider)
+    repo_counter +=1    
+readfile.close()
+writefile.close()
+print(huge_list)
